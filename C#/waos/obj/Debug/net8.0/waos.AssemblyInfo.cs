@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("waos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c753884c1d5ab7c4d7893861d316359f8f404a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a13f032f005c027cf2bf2c5c4a8fed12187c6c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("waos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("waos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
