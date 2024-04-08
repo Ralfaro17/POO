@@ -1,18 +1,18 @@
-package programa6;
+package programa10;
 
 import java.util.Scanner;
 
-public class Panaderia{
+public class ParImpar {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        int cantidadPan = 0;
+        int numero = 0;
         boolean error = true;
 
         do {
-            System.out.println("Escribe el numero de barras de pan vendidas que no eran del dia:");
+            System.out.println("Escribe un numero entero para saber si es par o impar:");
             if(entrada.hasNextInt()){
-                cantidadPan = entrada.nextInt();
+                numero = entrada.nextInt();
                 error = false;
             }
             else{
@@ -22,9 +22,14 @@ public class Panaderia{
         } while (error);
         error = true;
         entrada.nextLine();
-
-        System.out.printf("Precio regular por barra de pan: 3.49 Euros%nPrecio con descuento por barra que no es del dia: 1.396 Euros%nPrecio de %d barras vendidas que no eran del dia: %.2f Euros", cantidadPan, cantidadPan*1.396);
-
+        
+        if(numero % 2 == 0){
+            System.out.println("El numero ingresado es par");
+        }
+        else{
+            System.out.println("El numero ingresado es impar");
+        }
+        
         entrada.close();
     }
 }

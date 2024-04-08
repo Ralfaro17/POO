@@ -1,18 +1,18 @@
-package programa9;
+package programa11;
 
 import java.util.Scanner;
 
-public class Division {
+public class impuesto{
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-
-        float numero1 = 0, numero2 = 0;
+        int edad = 0;
+        float ingreso = 0;
         boolean error = true;
 
         do {
-            System.out.println("Escribe el numero 1:");
-            if(entrada.hasNextFloat()){
-                numero1 = entrada.nextFloat();
+            System.out.println("Ingresa tu edad:");
+            if(entrada.hasNextInt()){
+                edad = entrada.nextInt();
                 error = false;
             }
             else{
@@ -24,9 +24,9 @@ public class Division {
         entrada.nextLine();
 
         do {
-            System.out.println("Escribe el numero 2:");
+            System.out.println("Escribe tus ingresos mensuales en Euros:");
             if(entrada.hasNextFloat()){
-                numero2 = entrada.nextFloat();
+                ingreso = entrada.nextFloat();
                 error = false;
             }
             else{
@@ -37,12 +37,11 @@ public class Division {
         error = true;
         entrada.nextLine();
 
-        float division = numero1/numero2;
-        if (Float.isInfinite(division)) {
-            System.out.println("Error: ha ocurrido una division entre 0");
+        if (edad > 16 && ingreso > 1000) {
+            System.out.println("Debes tributar");
         }
         else{
-            System.out.printf("la division de %.2f y %.2f es %.2f", numero1, numero2, division);
+            System.out.println("No debes tributar");
         }
 
         entrada.close();
