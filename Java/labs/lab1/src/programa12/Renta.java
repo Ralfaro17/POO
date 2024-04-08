@@ -38,7 +38,6 @@ public class Renta {
             System.out.println("Te corresponde un tipo impositivo del 45%");
         }
 
-
         entrada.close();
     }
 }
