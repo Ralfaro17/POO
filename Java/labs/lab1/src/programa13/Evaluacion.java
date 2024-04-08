@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Evaluacion {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        float puntos = -1;
+        float puntos = 0;
         boolean error = true;
         String rendimiento = "";
 
@@ -13,7 +13,7 @@ public class Evaluacion {
             System.out.println("Escribe tu puntuación:");
             if(entrada.hasNextFloat()){
                 puntos = entrada.nextFloat();
-                if(puntos == 0.0 || puntos == 0.4 || puntos >= 0.6){
+                if(Float.compare(puntos, (float) 0.0) == 0 || Float.compare(puntos, (float) 0.4) == 0 || puntos >= 0.6){
                     error = false;
                 }
             }
