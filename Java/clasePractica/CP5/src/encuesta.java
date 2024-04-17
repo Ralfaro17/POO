@@ -40,10 +40,19 @@ public class encuesta {
             }
         }
 
-        message += String.format("Porcentaje de hombres: %20d%n", cantidadHombres);
-        message += String.format("Porcentaje de mujeres: %20d%n", cantidadMujeres);
-        message += String.format("Porcentaje de hombres que trabajan: %20d%n", hombresTrabajadores);
-        message += String.format("Porcentaje de mujeres que trabajan: %20d%n", mujeresTrabajadoras);
+        message += String.format("Cantidad de hombres: %20d%n", cantidadHombres);
+        message += String.format("Cantidad de mujeres: %20d%n", cantidadMujeres);
+        message += String.format("Cantidad de hombres que trabajan: %20d%n", hombresTrabajadores);
+        message += String.format("Cantidad de mujeres que trabajan: %20d%n", mujeresTrabajadoras);
+
+        if(hombresTrabajadores == 0){
+            hombresTrabajadores = 1;
+        }
+        
+        if(mujeresTrabajadoras == 0){
+            mujeresTrabajadoras = 1;
+        }
+        
         message += String.format("Sueldo promedio de hombres que trabajan: %20.2f%n", sueldoTotalHombres/hombresTrabajadores);
         message += String.format("Sueldo promedio de mujeres que trabajan: %20.2f%n", sueldoTotalMujeres/mujeresTrabajadoras);
 
