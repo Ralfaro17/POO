@@ -21,7 +21,7 @@ public class encuesta {
                 cantidadMujeres++;
             }
 
-            trabajan[i] = JOptionPane.showOptionDialog(null, String.format("Selecciona si trabajas o no"), "Input de sexo", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, OpcionesTrabajo, OpcionesTrabajo[0]);
+            trabajan[i] = JOptionPane.showOptionDialog(null, String.format("Selecciona si trabajas o no"), "Input de trabajo", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, OpcionesTrabajo, OpcionesTrabajo[0]);
 
             if (trabajan[i] == 1){
                 sueldo[i] = 0;
