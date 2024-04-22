@@ -82,18 +82,66 @@ public class Operaciones {
                         JOptionPane.showMessageDialog(null, String.format("El numero %d no fue encontrado", NumeroABuscar), "Error: no encontrado", 1);
                     }
                 case 6:
+                    int contador = 0;
+                    String resultado = "";
                     int[] temp = new int[columnas*filas];
                     for(int i = 0; i < arreglo.length; i++){
                         for(int j = 0; j < arreglo[0].length; j++){
-                            temp[]
+                            temp[contador] = arreglo[i][j];
+                            contador++;
                         }
                     }
 
+                    contador = 0;
 
+                    Sort(temp, 0, temp.length-1);
+                    for(int i = 0;  i < arreglo.length; i++){
+                        for(int j = 0; j < arreglo[0].length; j++){
+                            resultado += String.format("%d ", temp[contador]);
+                            if(j == arreglo[0].length-1){
+                                resultado += String.format("%n");
+                            }
+                            contador++;
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, resultado , "Arreglo ordenado", 1);
             
                 default:
                     break;
             }
         }
+    }
+
+    public static void Sort(int arreglo[], int izquierda, int derecha){
+        int pivote = arreglo[izquierda];
+
+        int i = izquierda;
+        int j = derecha;
+        int auxiliar;
+
+        while(i<j)
+        {
+            while (arreglo[i] <= pivote && i < j) 
+                i++;
+
+            while (arreglo[j] > pivote) 
+                j--;   
+
+            if (i<j) 
+            {                                     
+                auxiliar = arreglo[i];                  
+                arreglo[i]= arreglo[j];
+                arreglo[j]=auxiliar;
+            }
+        }
+
+        arreglo[izquierda] = arreglo[j]; 
+        arreglo[j] = pivote;
+
+        if (izquierda < j-1)
+            Sort(arreglo,izquierda,j-1);
+
+        if (j+1 < derecha)
+            Sort(arreglo,j+1,derecha);
     }
 }
