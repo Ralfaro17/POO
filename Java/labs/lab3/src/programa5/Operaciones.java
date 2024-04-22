@@ -1,6 +1,5 @@
 package programa5;
 
-import javax.print.attribute.standard.JobPriority;
 import javax.swing.JOptionPane;
 
 public class Operaciones {
@@ -8,7 +7,6 @@ public class Operaciones {
         int[][] arreglo;
         String[] texto = {"Mostrar valores", "Mostrar pares", "Mostrar impares", "Mostrar mayor", "Mostrar menor", "Buscar numero", "Ordenar arreglo", "Salir del programa"};
         int filas = 0, columnas = 0;
-        String printer = "";
         String matriz = "", pares = "", impares = "";
         int mayor = 0, menor = 0; 
         int opcion = 0;
