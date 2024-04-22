@@ -66,8 +66,9 @@ public class Operaciones {
                 case 4:
                     JOptionPane.showMessageDialog(null, String.format("Menor%n%d%n", menor), "Numero menor de toda la matriz", 1);
                     break;
-                case 5;
+                case 5:
                     
+
             
                 default:
                     break;
