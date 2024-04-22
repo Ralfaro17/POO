@@ -1,5 +1,7 @@
 package programa5;
 
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class Operaciones {
@@ -10,6 +12,7 @@ public class Operaciones {
         String matriz = "", pares = "", impares = "";
         int mayor = 0, menor = 0; 
         int opcion = 0;
+
 
         filas = Integer.parseInt(JOptionPane.showInputDialog("Escribe la cantidad de filas que deseas que tenga el arreglo"));
         columnas = Integer.parseInt(JOptionPane.showInputDialog("Escribe la cantidad de columnas que deseas que tenga el arreglo"));
@@ -92,7 +95,7 @@ public class Operaciones {
 
                     contador = 0;
 
-                    Sort(temp, 0, temp.length-1);
+                    Arrays.sort(temp);
                     for(int i = 0;  i < arreglo.length; i++){
                         for(int j = 0; j < arreglo[0].length; j++){
                             resultado += String.format("%d ", temp[contador]);
@@ -110,36 +113,4 @@ public class Operaciones {
         }
     }
 
-    public static void Sort(int arreglo[], int izquierda, int derecha){
-        int pivote = arreglo[izquierda];
-
-        int i = izquierda;
-        int j = derecha;
-        int auxiliar;
-
-        while(i<j)
-        {
-            while (arreglo[i] <= pivote && i < j) 
-                i++;
-
-            while (arreglo[j] > pivote) 
-                j--;   
-
-            if (i<j) 
-            {                                     
-                auxiliar = arreglo[i];                  
-                arreglo[i]= arreglo[j];
-                arreglo[j]=auxiliar;
-            }
-        }
-
-        arreglo[izquierda] = arreglo[j]; 
-        arreglo[j] = pivote;
-
-        if (izquierda < j-1)
-            Sort(arreglo,izquierda,j-1);
-
-        if (j+1 < derecha)
-            Sort(arreglo,j+1,derecha);
-    }
 }
