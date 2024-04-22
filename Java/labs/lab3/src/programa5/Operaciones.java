@@ -67,7 +67,28 @@ public class Operaciones {
                     JOptionPane.showMessageDialog(null, String.format("Menor%n%d%n", menor), "Numero menor de toda la matriz", 1);
                     break;
                 case 5:
+                    int NumeroABuscar = Integer.parseInt(JOptionPane.showInputDialog("Escribe el numero que deseas buscar"));
+                    boolean validador = false;
                     
+                    for( int i = 0; i < arreglo.length; i++){
+                        for(int j = 0; j < arreglo[0].length; j++){
+                            if(arreglo[i][j] == NumeroABuscar){
+                                JOptionPane.showMessageDialog(null, String.format("El numero %d fue encontrado en la columna %d de la fila %d del arreglo", NumeroABuscar, j, i), "Encontrado", 1);
+                                validador = true;
+                            }
+                        }
+                    }
+                    if(!validador){
+                        JOptionPane.showMessageDialog(null, String.format("El numero %d no fue encontrado", NumeroABuscar), "Error: no encontrado", 1);
+                    }
+                case 6:
+                    int[] temp = new int[columnas*filas];
+                    for(int i = 0; i < arreglo.length; i++){
+                        for(int j = 0; j < arreglo[0].length; j++){
+                            temp[]
+                        }
+                    }
+
 
             
                 default:
