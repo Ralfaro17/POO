@@ -3,7 +3,7 @@ package programa2;
 import javax.swing.JOptionPane;
 
 public class Conversion {
-    double grados;
+    private double grados;
 
     public Conversion(double grados) {
         this.grados = grados;
@@ -18,11 +18,11 @@ public class Conversion {
     }
 
     public void convertirFC(){
-        this.grados = (grados * 9/5) + 32;
-    }
-
-    public void convertirCF(){
         this.grados = (grados - 32) * 5/9;
+    }
+    
+    public void convertirCF(){
+        this.grados = (grados * 9/5) + 32;
     }
     public static void main(String[] args) {
         Conversion conversion1 = new Conversion(Double.parseDouble(JOptionPane.showInputDialog("Ingrese los grados en Celsius")));
