@@ -15,7 +15,7 @@ public class EmpleadoPorComision extends Empleado{
     }
 
     public void setTarifaComision(double tarifaComision) {
-        this.tarifaComision = tarifaComision;
+        this.tarifaComision = (tarifaComision >= 0) ? tarifaComision : 0.0;
     }
 
     public double getVentasBrutas() {
@@ -23,11 +23,11 @@ public class EmpleadoPorComision extends Empleado{
     }
 
     public void setVentasBrutas(double ventasBrutas) {
-        this.ventasBrutas = ventasBrutas;
+        this.ventasBrutas = (ventasBrutas >= 0) ? ventasBrutas : 0.0;
     }
 
     @Override
     public String toString() {
-        return super.toString() + String.format("Comision: %.2f\nVentas brutas: %.2f\n", getTarifaComision(), getVentasBrutas());
+        return super.toString() + String.format("Comision: %.2f\nVentas: %.2f\n", getTarifaComision(), getVentasBrutas());
     }
 }
