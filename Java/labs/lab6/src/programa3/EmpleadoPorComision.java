@@ -1,7 +1,5 @@
 package programa3;
 
-import programa.Empleado;
-
 public class EmpleadoPorComision extends Empleado{
     private double tarifaComision; 
     private double ventasBrutas;

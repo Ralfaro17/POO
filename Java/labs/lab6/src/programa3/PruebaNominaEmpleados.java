@@ -2,10 +2,6 @@ package programa3;
 
 import javax.swing.JOptionPane;
 
-import programa.Empleado;
-import programa.EmpleadoPorComision;
-import programa.EmpleadoPorHora;
-
 public class PruebaNominaEmpleados {
     public static void main(String[] args) {
         // Crear objetos de todas las clases
