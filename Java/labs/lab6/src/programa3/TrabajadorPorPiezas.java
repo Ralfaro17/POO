@@ -1,7 +1,5 @@
 package programa3;
 
-import programa.Empleado;
-
 public class TrabajadorPorPiezas extends Empleado{
     private double sueldo;
     private int piezas;

@@ -1,7 +1,5 @@
 package programa3;
 
-import programa.Empleado;
-
 public class EmpleadoAsalariado extends Empleado {
     double salarioSemanal;
 
