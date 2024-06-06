@@ -1,11 +1,10 @@
 package interfaz;
 
 class EmpleadoAsalariado extends Empleado {
-
     private double salarioSemanal;
 
-    public EmpleadoAsalariado(String nombre, String apellido, String seguroSocial, double salarioSemanal) {
-        super(nombre, apellido, seguroSocial);
+    public EmpleadoAsalariado(String primerNombre, String apellidoPaterno, String numeroSeguroSocial,double salarioSemanal) {
+        super(primerNombre, apellidoPaterno, numeroSeguroSocial);
         this.salarioSemanal = salarioSemanal;
     }
 
@@ -24,7 +23,6 @@ class EmpleadoAsalariado extends Empleado {
 
     @Override
     public String toString() {
-        return String.format(super.toString() + "salario: %.2f", getSalarioSemanal());
+        return String.format(super.toString() + String.format("Salario semanal: %.2f%n", getSalarioSemanal()));
     }
-
 }
