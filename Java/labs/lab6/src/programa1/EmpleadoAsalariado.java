@@ -1,7 +1,7 @@
 package programa1;
 
 public class EmpleadoAsalariado extends Empleado {
-    double salarioSemanal;
+    private double salarioSemanal;
 
     public EmpleadoAsalariado(String primerNombre, String apellidoPaterno, String numeroSeguroSocial,
             double salarioSemanal, Fecha fechaNacimiento) {
