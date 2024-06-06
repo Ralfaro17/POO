@@ -12,14 +12,13 @@ public class PruebaInterfaces {
         objetosPorPagar[2] = new EmpleadoAsalariado("Francisco", "Perez", "001-171201-082G", 750.00);
         objetosPorPagar[3] = new EmpleadoAsalariado("Pedro", "Orozco", "123-456789-012A", 1800.00);
 
-        StringBuilder mensaje = new StringBuilder();
+        String mensaje = "Facturas y Empleados por pagar\n\n";
 
-        for (PorPagar porPagar : objetosPorPagar) {
-            mensaje.append(porPagar.toString()).append("\n\n");
+        for (PorPagar objeto : objetosPorPagar) {
+            mensaje += objeto + "\n";
         }
 
-        JOptionPane.showMessageDialog(null, mensaje.toString(), "Factura de Productos y Empleados",
-                JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, mensaje, "Prueba de interfaces Polimorficas", 1);
 
     }
 
