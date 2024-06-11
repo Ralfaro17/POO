@@ -1,14 +1,16 @@
 package programa3;
 
-public class Empleado {
+public abstract class Empleado {
     private final String primerNombre;
     private final String apellidoPaterno;
     private final String numeroSeguroSocial;
+    private final Fecha fechaNacimiento;
 
-    public Empleado(String primerNombre, String apellidoPaterno, String numeroSeguroSocial) {
+    public Empleado(String primerNombre, String apellidoPaterno, String numeroSeguroSocial, Fecha fechaNacimiento) {
         this.primerNombre = primerNombre;
         this.apellidoPaterno = apellidoPaterno;
         this.numeroSeguroSocial = numeroSeguroSocial;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getPrimerNombre() {
@@ -22,9 +24,15 @@ public class Empleado {
     public String getNumeroSeguroSocial() {
         return numeroSeguroSocial;
     }
+
+    public Fecha getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public abstract double ingresos();
     
     @Override
     public String toString() {
-        return String.format("%s %s\nSeguro: %s\n", getPrimerNombre(), getApellidoPaterno(), getNumeroSeguroSocial());
+        return String.format("%s %s\nNumero de seguro social: %s\n", getPrimerNombre(), getApellidoPaterno(), getNumeroSeguroSocial());
     }
 }

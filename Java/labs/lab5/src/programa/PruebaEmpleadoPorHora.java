@@ -1,4 +1,4 @@
-package programa3;
+package programa;
 
 import javax.swing.JOptionPane;
 

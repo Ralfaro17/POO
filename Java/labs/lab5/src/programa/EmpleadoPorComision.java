@@ -1,4 +1,4 @@
-package programa3;
+package programa;
 
 public class EmpleadoPorComision extends Empleado{
     private double tarifaComision; 
