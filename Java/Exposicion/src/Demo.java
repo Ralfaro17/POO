@@ -1,134 +1,88 @@
-import java.awt.*; 
-import javax.swing.*; 
+import java.awt.*;
+import javax.swing.*;
 import java.awt.event.*;
 
-// Java program to show JRadioButton Example. 
-// in java. Importing different Package. 
-import java.awt.*; 
-import javax.swing.*; 
-import java.awt.event.*; 
-  
-class Demo extends JFrame { 
-  
-    // Declaration of object of JRadioButton class. 
-    JRadioButton jRadioButton1; 
-  
-    // Declaration of object of JRadioButton class. 
-    JRadioButton jRadioButton2; 
-  
-    // Declaration of object of JButton class. 
-    JButton jButton; 
-  
-    // Declaration of object of ButtonGroup class. 
-    ButtonGroup G1; 
-  
-    // Declaration of object of  JLabel  class. 
-    JLabel L1; 
-  
-    // Constructor of Demo class. 
-    public Demo() 
-    { 
-  
-        // Setting layout as null of JFrame. 
-        this.setLayout(null); 
-  
-        // Initialization of object of "JRadioButton" class. 
-        jRadioButton1 = new JRadioButton(); 
-  
-        // Initialization of object of "JRadioButton" class. 
-        jRadioButton2 = new JRadioButton(); 
-  
-        // Initialization of object of "JButton" class. 
-        jButton = new JButton("Click"); 
-  
-        // Initialization of object of "ButtonGroup" class. 
-        G1 = new ButtonGroup(); 
-  
-        // Initialization of object of " JLabel" class. 
-        L1 = new JLabel("Qualification"); 
-  
-        // setText(...) function is used to set text of radio button. 
-        // Setting text of "jRadioButton2". 
-        jRadioButton1.setText("Under-Graduate"); 
-  
-        // Setting text of "jRadioButton4". 
-        jRadioButton2.setText("Graduate"); 
-  
-        // Setting Bounds of "jRadioButton2". 
-        jRadioButton1.setBounds(120, 30, 120, 50); 
-  
-        // Setting Bounds of "jRadioButton4". 
-        jRadioButton2.setBounds(250, 30, 80, 50); 
-  
-        // Setting Bounds of "jButton". 
-        jButton.setBounds(125, 90, 80, 30); 
-  
-        // Setting Bounds of JLabel "L2". 
-        L1.setBounds(20, 30, 150, 50); 
-  
-        // "this" keyword in java refers to current object. 
-        // Adding "jRadioButton2" on JFrame. 
-        this.add(jRadioButton1); 
-  
-        // Adding "jRadioButton4" on JFrame. 
-        this.add(jRadioButton2); 
-  
-        // Adding "jButton" on JFrame. 
-        this.add(jButton); 
-  
-        // Adding JLabel "L2" on JFrame. 
-        this.add(L1); 
-  
-        // Adding "jRadioButton1" and "jRadioButton3" in a Button Group "G2". 
-        G1.add(jRadioButton1); 
-        G1.add(jRadioButton2); 
-  
-        // Adding Listener to JButton. 
-        jButton.addActionListener(new ActionListener() { 
-            // Anonymous class. 
-  
-            public void actionPerformed(ActionEvent e) 
-            { 
-                // Override Method 
-  
-                // Declaration of String class Objects. 
-                String qual = " "; 
-  
-                // If condition to check if jRadioButton2 is selected. 
-                if (jRadioButton1.isSelected()) { 
-  
-                    qual = "Under-Graduate"; 
-                } 
-  
-                else if (jRadioButton2.isSelected()) { 
-  
-                    qual = "Graduate"; 
-                } 
-                else { 
-  
-                    qual = "NO Button selected"; 
-                } 
-  
-                // MessageDialog to show information selected radio buttons. 
-                JOptionPane.showMessageDialog(Demo.this, qual); 
-            } 
-        }); 
-    } 
-} 
-  
-class RadioButton { 
-    // Driver code. 
-    public static void main(String args[]) 
-    { // Creating object of demo class. 
-        Demo f = new Demo(); 
-  
-        // Setting Bounds of JFrame. 
-        f.setBounds(100, 100, 400, 200); 
-  
-        // Setting Title of frame. 
-        f.setTitle("RadioButtons"); 
-  
-        // Setting Visible status of frame as true. 
-        f.setVisible(true); 
-    } 
-} 
+class Demo extends JFrame {
+    JRadioButton radioButton1;
+    JRadioButton radioButton2;
+    JButton button;
+    ButtonGroup group;
+
+    // Constructor of Demo class.
+    public Demo()
+    {
+
+        // Setting layout as null of JFrame.
+        this.setLayout(null);
+        radioButton1 = new JRadioButton();
+        radioButton2 = new JRadioButton();
+        button = new JButton("Click");
+        group = new ButtonGroup();
+
+        // con esto se puede dar un nombre a los radio button
+        radioButton1.setText("Button 1");
+        radioButton2.setText("Button 2");
+
+        // Se establece la posición de los botones
+        radioButton1.setBounds(10, 30, 120, 50);
+        radioButton2.setBounds(120, 30, 120, 50);
+        button.setBounds(125, 90, 80, 30);
+
+        if (new ImageIcon(getClass().getResource("./icons8-button-24.png")).getIconWidth() == -1) {
+            System.out.println("Icon not found or cannot be loaded.");
+        }
+
+        radioButton2.setIcon(new ImageIcon(getClass().getResource("./icons8-button-24.png")));
+        radioButton2.setSelectedIcon(new ImageIcon(getClass().getResource("icons8-button-24 (1).png")));
+
+
+        // Se agregan los botones al grupo de botones para que solo se seleccione uno al mismo tiempo
+        group.add(radioButton1);
+        group.add(radioButton2);
+        
+        // Se añaden los botones al JFrame
+        this.add(radioButton1);
+        this.add(radioButton2);
+        this.add(button);
+
+        // Se añade un escuchador de eventos al botón para que se ejecute una acción al hacer click
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+                String message = " ";
+
+                // Verifica que el primer botón seleccionado sea el numero 1
+                if (radioButton1.isSelected()) {
+
+                    message = "Button 1";
+                }
+
+                // Verifica que el primer botón seleccionado sea el numero 2
+                else if (radioButton2.isSelected()) {
+
+                    message = "Button 2";
+                }
+                else {
+                    message = "NO Button selected";
+                }
+
+                // al tocar el botón, se crea un message dialog dando algo de información
+                JOptionPane.showMessageDialog(Demo.this, message);
+            }
+        });
+    }
+}
+
+class RadioButton {
+    public static void main(String args[])
+    {
+        Demo frame = new Demo();
+
+        // Se escribe las propiedades del JFrame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 200);
+        frame.setLocationRelativeTo(null);
+        frame.setTitle("RadioButtons");
+        frame.setVisible(true);
+    }
+}
